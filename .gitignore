@@ -1,0 +1,4 @@
+backend/.env
+frontend-ai/.env.local
+backend/venv/
+frontend-ai/node_modules/
