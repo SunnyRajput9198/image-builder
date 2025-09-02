@@ -34,15 +34,15 @@ def generate():
     try:
         image = client.text_to_image(prompt, model=MODEL)
         # ... (Image processing logic remains the same) ...
-        draw = ImageDraw.Draw(image)
-        font_size = int(image.width / 15)
-        font = ImageFont.truetype("font.ttf", font_size)
-        text_bbox = draw.textbbox((0, 0), video_title.upper(), font=font)
-        text_width = text_bbox[2] - text_bbox[0]
-        text_height = text_bbox[3] - text_bbox[1]
-        position = ((image.width - text_width) / 2, (image.height - text_height) * 0.85)
-        stroke_width = int(font_size / 20)
-        draw.text(position, video_title.upper(), font=font, fill="white", stroke_width=stroke_width, stroke_fill="black")
+        # draw = ImageDraw.Draw(image)
+        # font_size = int(image.width / 15)
+        # font = ImageFont.truetype("font.ttf", font_size)
+        # text_bbox = draw.textbbox((0, 0), video_title.upper(), font=font)
+        # text_width = text_bbox[2] - text_bbox[0]
+        # text_height = text_bbox[3] - text_bbox[1]
+        # position = ((image.width - text_width) / 2, (image.height - text_height) * 0.85)
+        # stroke_width = int(font_size / 20)
+        # draw.text(position, video_title.upper(), font=font, fill="white", stroke_width=stroke_width, stroke_fill="black")
         final_image_buffer = io.BytesIO()
         image.save(final_image_buffer, "PNG")
         final_image_buffer.seek(0)
